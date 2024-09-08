@@ -35,6 +35,9 @@ Para iniciar Debes abrir Visual Studio Code y abrir el folder de "CoApi", luego 
 
 ![image](https://github.com/user-attachments/assets/da39952d-71dc-4886-bbdc-a9209c573e10)
 
+Esta es una confirmación de que se ejecutó correctamente.
+![image](https://github.com/user-attachments/assets/27d20dfc-6607-48c5-a7da-12ae25a42f5c)
+
  Luego debes ir al navegador e ir a la direccion: http://localhost:4200/   
 
  ![image](https://github.com/user-attachments/assets/8eefa503-383c-4150-b4eb-116c00e393ce)
