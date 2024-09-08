@@ -1,0 +1,36 @@
+﻿@model P___Gamestb_App.Models.ViewModels.JuegoDesarrolladoraViewModel
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Juego</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+        <dt class = "col-sm-2">
+            Desarrolladora
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DesarrolladoraNombre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.JuegoID">Editar</a> |
+    <a asp-action="Index">Regresar</a>
+</div>

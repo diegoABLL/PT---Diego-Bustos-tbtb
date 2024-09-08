@@ -1,0 +1,80 @@
+<!-- src/app/app.component.html -->
+<div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded ">
+  <h1 class="my-4">Usuarios</h1>
+
+  <!-- Input para búsqueda -->
+  <div class="mb-4">
+    <input type="text" [(ngModel)]="searchQuery" (input)="filtrarDatos()" placeholder="Buscar">
+  </div>
+
+  <!-- Opciones de despliegue -->
+  <div class="mb-4">
+    <button (click)="mostrarTabla()" class="btn btn-primary btn-custom me-2" >Tabla</button>
+    <button (click)="mostrarTarjetas()" class="btn btn-secondary btn-custom" >Tarjetas</button>
+  </div>
+
+  <!-- Tabla de usuarios -->
+  <div *ngIf="currentView === 'table'">
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Usuario</th>
+            <th>Email</th>
+            <th>Calle</th>
+            <th>Suite</th>
+            <th>Ciudad</th>
+            <th>Codigo Postal</th>
+            <th>Lat</th>
+            <th>Lng</th>
+            <th>Telefono</th>
+            <th>Website</th>
+            <th>Empresa</th>
+            <th>CatchPhrase</th>
+            <th>BS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of filteredData">
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.address.street }}</td>
+            <td>{{ user.address.suite }}</td>
+            <td>{{ user.address.city }}</td>
+            <td>{{ user.address.zipcode }}</td>
+            <td>{{ user.address.geo.lat }}</td>
+            <td>{{ user.address.geo.lng }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.website }}</td>
+            <td>{{ user.company.name }}</td>
+            <td>{{ user.company.catchPhrase }}</td>
+            <td>{{ user.company.bs }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tarjetas de usuarios -->
+  <div *ngIf="currentView === 'cards'">
+    <div class="row">
+      <div *ngFor="let user of filteredData" class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ user.name }}</h5>
+            <p class="card-text"><strong>Username:</strong> {{ user.username }}</p>
+            <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+            <p class="card-text"><strong>Address:</strong> {{ user.address.street }}, {{ user.address.suite }}, {{ user.address.city }}, {{ user.address.zipcode }}</p>
+            <p class="card-text"><strong>Phone:</strong> {{ user.phone }}</p>
+            <p class="card-text"><strong>Website: </strong> <a href="http://{{ user.website }}" target="_blank">{{ user.website }}</a></p>
+            <p class="card-text"><strong>Company:</strong> {{ user.company.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

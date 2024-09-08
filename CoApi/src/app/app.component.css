@@ -1,0 +1,104 @@
+
+
+/* Estilo general para el cuerpo */
+body {
+  background-color: #00747a;
+  color: aliceblue;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.btn-custom {
+  background-color: #00848d;
+  border-color: #00848d;
+}
+
+
+.btn-custom:hover {
+  background-color: #005f6b;
+  border-color: #005f6b;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+h1.my-4 {
+  color: black;
+}
+
+/* Estilo para la tabla */
+table {
+  color: black;
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #00747a !important;
+}
+
+/* Estilo para las celdas de la tabla */
+table th, table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #d0d0d0;
+}
+
+/* Estilo para la cabecera de la tabla */
+table thead {
+  background-color: black;
+  color: white;
+}
+
+/* Estilo para las tarjetas */
+.card {
+  background-color: #a2d9e1d2;
+  color: #000000;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 1.5rem;
+  }
+
+  table {
+      font-size: 0.85rem;
+  }
+
+  /* Ajustar el padding y el tamaño de fuente para mejor visualización en dispositivos móviles */
+  table th, table td {
+      padding: 6px;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  h1 {
+      font-size: 1.25rem;
+  }
+
+  table th, table td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      text-align: right;
+      border: none;
+      position: relative;
+  }
+
+  table th::before, table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 10px;
+      font-weight: bold;
+      text-align: left;
+      background-color: #f1f1f1;
+      border-right: 1px solid #ddd;
+  }
+
+  table td::before {
+      content: "";
+  }
+}

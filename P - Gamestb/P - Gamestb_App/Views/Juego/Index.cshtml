@@ -1,0 +1,57 @@
+﻿
+@model IEnumerable<P___Gamestb_App.Models.Juego> 
+
+@{
+    ViewData["Title"] = "Catálogo";
+}
+
+<h1>Catálogo</h1>
+
+<p>
+    <a asp-action="Create">Agregar Juego</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th type="number" step="0.01">
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                Nombre Desarrolladora
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Nombre
+            </td>
+            <td>
+                    @if (@item.Precio == 0)
+                    {
+                        <p>¡¡Gratis!!</p>
+                    }
+                    else
+                    {
+                        @item.Precio
+                    }
+                </td>
+            <td>
+                @item.Desarrolladora.Nombre
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.JuegoID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.JuegoID">Ver Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.JuegoID">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
