@@ -29,7 +29,7 @@ En Catálogo es necesario agregar un juego como proceso inicial.
 
 
 ## La parte 3 se encuentra en "CoApi"
-Para esta parte en necesario tener Nodejs, Angular y Visual Studio Code instalado, si no las tienes puedes descargar node desde la página oficial: https://nodejs.org/en  y angular con el siguiente comando desde el cmd " npm install -g @angular/cli " .
+Para esta parte en necesario tener preferiblemente la ultima version de Nodejs, Angular y Visual Studio Code instalados, si no las tienes puedes descargar node desde la página oficial: https://nodejs.org/en  y angular con el siguiente comando desde el cmd " npm install -g @angular/cli " .
  
 Para iniciar Debes abrir Visual Studio Code y abrir el folder de "CoApi", luego abrir la terminal con Ctrl+ñ y de ser necesario hacer cd hasta CoApi. Luego ingresar el comando "npm start".
 
